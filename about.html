@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="Logo" width="50" height="50">
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="container">
+      <h1>เกี่ยวกับฉัน</h1>
+      <p>
+        สวัสดี! ผมคือ <strong>[ทิว]</strong>, ผู้สร้างสรรค์งานที่หลงใหลใน ใน <strong>[การออกแบบ, การเขียนโปรแกรม, สร้างเกม, สร้างรูป, สร้างโลกของเกมและนิยาย].</strong>
+        มีความมุ่งมั่นเป็นอย่างยิ่ง พื้นที่ ใน การก่อตั้ง ซึ่งเป็นรากฐานสำหรับองค์กรของเรา และพร้อมพัฒนาสิ่งใหม่ ๆ อยู่เสมอ.
+      </p>
+
+      <!-- ไทม์ไลน์ -->
+      <div class="timeline">
+        <h2>ประสบการณ์และการศึกษา</h2>
+        <ul>
+          <li>
+            <p>มัธยมปลาย<br>เขาเรียกกันว่าโรงเรียนเวทมนต์ ศูนย์รวมความปั่น</p>
+          </li>
+          <li>
+            <h3>ปริญญา</h3>
+            <p>ปัจจุบัน<br>คณะ: วิทยาการคอมพิวเตอร์</p>
+          </li>
+        </ul>
+      </div>
+
+      <!-- ทักษะ -->
+      <div class="skills">
+        <h2>ทักษะของฉัน</h2>
+        <ul>
+          <li>การออกแบบ UX/UI</li>
+          <li>การพัฒนาเว็บไซต์</li>
+          <li>ความคิดสร้างสรรค์ เขียนนิยาย และเซตติ่งเกม</li>
+          <li>สร้างระบบโปรแกรม และโมบายแอป</li>
+          <li>สร้างเกม ด้วย Unity, RPGMaker, godot, Roblox</li>
+          <li>สร้างวสรรค์ภาพ ตัดต่อ จัดการ Adobe photoshop</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2024 MyPortfolio</p>
+    <ul class="social-links">
+      <li><a href="https://www.instagram.com/ioynt/?__pwa=1">Instagram</a></li>
+      <li><a href="https://www.facebook.com/tiwgengioyn">Facebook</a></li>
+      <li><a href="https://youtube.com/@sometimequestion?si=1TZUsLgIq8BMSwD4">YouTube</a></li>
+      <li><a href="https://fictionlog.co/u/ioynnightwalker">Fictionlog</a></li>
+      <li><a href="https://github.com/ioynnightwalkerfly">Github</a></li>
+      <li><a href="https://line.me/ti/p/NDSdKmhbfX">Line</a></li>
+      <li><a href="https://www.deviantart.com/jusminnightwalker">Deviantart</a></li>
+      
+    </ul>
+  </footer>
+</body>
+</html>
+
+
+
+<style>
+    /* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+/* About Section */
+.about {
+  padding: 50px 20px;
+  text-align: center;
+  background-color: #f4f4f4;
+}
+
+.about h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.about p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+/* Timeline */
+.timeline {
+  margin: 20px auto;
+  text-align: left;
+}
+
+.timeline h2 {
+  font-size: 1.8em;
+  margin-bottom: 15px;
+}
+
+.timeline ul {
+  list-style: none;
+  padding: 0;
+}
+
+.timeline li {
+  margin-bottom: 20px;
+}
+
+.timeline li h3 {
+  font-size: 1.5em;
+}
+
+.timeline li p {
+  font-size: 1em;
+  color: #555;
+}
+
+/* Skills */
+.skills {
+  margin-top: 40px;
+}
+
+.skills h2 {
+  font-size: 1.8em;
+  margin-bottom: 15px;
+}
+
+.skills ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding: 0;
+}
+
+.skills li {
+  font-size: 1.2em;
+  padding: 10px 20px;
+  background: #243B55;
+  color: white;
+  border-radius: 5px;
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.social-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding: 0;
+}
+
+.social-links a {
+  color: white;
+  text-decoration: none;
+}
+
+</style>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarot Club</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cormorant+Garamond:wght@600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: black;
+            color: #f0e6d2;
+            font-family: 'Cormorant Garamond', serif;
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .header {
+            font-size: 3rem;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #ffcccc;
+            font-family: 'Cinzel Decorative', serif;
+        }
+        .tarot-grid {
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
+            width: 100%;
+            position: relative;
+            height: 300px;
+            gap: 15px;
+        }
+        .tarot-card {
+            width: 150px;
+            height: 230px;
+            background-size: cover;
+            background-position: center;
+            border: 3px solid #ffcccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 204, 204, 0.5);
+        }
+        .input-container {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .password-input {
+            background: #1e1d24;
+            color: #f0e6d2;
+            border: 2px solid #f0e6d2;
+            padding: 10px;
+            font-size: 18px;
+            border-radius: 5px;
+            text-align: center;
+            width: 300px;
+        }
+        .password-input:focus {
+            outline: none;
+            border-color: #ffcccc;
+        }
+        .submit-btn {
+            margin-top: 20px;
+            background: #ffcccc;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .submit-btn:hover {
+            background: #e5a3a3;
+        }
+        .loader-container {
+            display: none;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .loader-bar {
+            width: 300px;
+            height: 10px;
+            background: #333;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid #ffcccc;
+            border-radius: 5px;
+        }
+        .loader-fill {
+            width: 0;
+            height: 100%;
+            background: linear-gradient(90deg, #ffcccc, #e5a3a3);
+            animation: loading 3s ease-in-out forwards;
+        }
+        @keyframes loading {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        .center-content {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: white;
+            opacity: 0;
+            animation: fadeIn 2s forwards ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        .book-image {
+            width: 400px;
+            height: auto;
+        }
+        .welcome-text {
+            font-size: 2.5rem;
+            margin-top: 20px;
+            color: #ffcccc;
+            text-align: center;
+            font-family: 'Cinzel Decorative', serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">Mystic Tarot Access</div>
+    <div class="tarot-grid" id="tarot-grid">
+        <div class="tarot-card" style="background-image: url('image1.jpg');"></div>
+        <div class="tarot-card" style="background-image: url('image2.jpg');"></div>
+        <div class="tarot-card" style="background-image: url('image3.jpg');"></div>
+        <div class="tarot-card" style="background-image: url('image4.jpg');"></div>
+        <div class="tarot-card" style="background-image: url('image5.jpg');"></div>
+        <div class="tarot-card" style="background-image: url('image6.jpg');"></div>
+        <div class="tarot-card" style="background-image: url('image7.jpg');"></div>
+        <div class="tarot-card" style="background-image: url('image8.jpg');"></div>
+    </div>
+    <div class="input-container" id="input-section">
+        <input class="password-input" type="password" placeholder="Enter Access Code">
+        <button class="submit-btn" onclick="grantAccess()">Submit</button>
+    </div>
+    <div id="loader" class="loader-container">
+        <div class="loader-bar">
+            <div class="loader-fill"></div>
+        </div>
+    </div>
+    <div id="content" class="center-content">
+        <img src="book.jpg" class="book-image" alt="Book Image">
+        <div class="welcome-text">Welcome to the Mystic Realm</div>
+    </div>
+    <script>
+        function grantAccess() {
+            // ซ่อนไพ่และช่องกรอก
+            document.getElementById('tarot-grid').style.display = "none";
+            document.getElementById('input-section').style.display = "none";
+
+            // แสดงแถบโหลด
+            const loader = document.getElementById('loader');
+            loader.style.display = "flex";
+
+            setTimeout(() => {
+                // ซ่อนแถบโหลดและแสดงจอดำ
+                loader.style.display = "none";
+                document.body.style.background = "black";
+
+                // แสดงข้อความและรูปภาพ
+                const content = document.getElementById('content');
+                content.style.display = "flex";
+            }, 3000); // เวลาโหลด 3 วินาที
+        }
+
+
+      
+    </script>
+
+
+
+</body>
+</html>
