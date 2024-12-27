@@ -131,14 +131,14 @@
 <body>
     <div class="header">Mystic Tarot Access</div>
     <div class="tarot-grid" id="tarot-grid">
-        <div class="tarot-card" style="background-image: url('image1.jpg');"></div>
-        <div class="tarot-card" style="background-image: url('image2.jpg');"></div>
-        <div class="tarot-card" style="background-image: url('image3.jpg');"></div>
-        <div class="tarot-card" style="background-image: url('image4.jpg');"></div>
-        <div class="tarot-card" style="background-image: url('image5.jpg');"></div>
-        <div class="tarot-card" style="background-image: url('image6.jpg');"></div>
-        <div class="tarot-card" style="background-image: url('image7.jpg');"></div>
-        <div class="tarot-card" style="background-image: url('image8.jpg');"></div>
+        <div class="tarot-card" style="background-image: url('img1.jpg');"></div>
+        <div class="tarot-card" style="background-image: url('img2.jpg');"></div>
+        <div class="tarot-card" style="background-image: url('img3.jpg');"></div>
+        <div class="tarot-card" style="background-image: url('img4.jpg');"></div>
+        <div class="tarot-card" style="background-image: url('img5.jpg');"></div>
+        <div class="tarot-card" style="background-image: url('img6.jpg');"></div>
+        <div class="tarot-card" style="background-image: url('img7.jpg');"></div>
+        <div class="tarot-card" style="background-image: url('img8.jpg');"></div>
     </div>
     <div class="input-container" id="input-section">
         <input class="password-input" type="password" placeholder="Enter Access Code">
@@ -154,25 +154,101 @@
         <div class="welcome-text">Welcome to the Mystic Realm</div>
     </div>
     <script>
-        function grantAccess() {
-            // ซ่อนไพ่และช่องกรอก
-            document.getElementById('tarot-grid').style.display = "none";
-            document.getElementById('input-section').style.display = "none";
 
-            // แสดงแถบโหลด
-            const loader = document.getElementById('loader');
-            loader.style.display = "flex";
 
-            setTimeout(() => {
-                // ซ่อนแถบโหลดและแสดงจอดำ
-                loader.style.display = "none";
-                document.body.style.background = "black";
+function grantAccess() {
+    const input = document.querySelector('.password-input');
+    const code = input.value; // รับค่ารหัสจากช่องกรอก
+    const correctCode = "241632"; // รหัสผ่านที่ถูกต้อง
 
-                // แสดงข้อความและรูปภาพ
-                const content = document.getElementById('content');
-                content.style.display = "flex";
-            }, 3000); // เวลาโหลด 3 วินาที
-        }
+    if (code === correctCode) {
+        // ซ่อนไพ่และช่องกรอก
+        document.getElementById('tarot-grid').style.display = "none";
+        document.getElementById('input-section').style.display = "none";
+
+        // แสดงแถบโหลด
+        const loader = document.getElementById('loader');
+        loader.style.display = "flex";
+
+        setTimeout(() => {
+            // ซ่อนแถบโหลดและแสดงจอดำ
+            loader.style.display = "none";
+            document.body.style.background = "black";
+
+            // แสดงข้อความและรูปภาพ
+            const content = document.getElementById('content');
+            content.style.display = "flex";
+        }, 3000); // เวลาโหลด 3 วินาที
+    } else {
+        // หากรหัสผิดแสดงหน้าจอมืดและรูปเคลื่อนไหวแบบเต็มจอ
+        showFullScreenAnimation();
+    }
+}
+
+function showFullScreenAnimation() {
+    // สร้างเลเยอร์สีดำ
+    const darkOverlay = document.createElement('div');
+    darkOverlay.style.position = 'fixed';
+    darkOverlay.style.top = 0;
+    darkOverlay.style.left = 0;
+    darkOverlay.style.width = '100%';
+    darkOverlay.style.height = '100%';
+    darkOverlay.style.background = 'rgba(0, 0, 0, 0.95)';
+    darkOverlay.style.zIndex = 1000;
+    darkOverlay.style.display = 'flex';
+    darkOverlay.style.alignItems = 'center';
+    darkOverlay.style.justifyContent = 'center';
+
+    // เพิ่มรูปเคลื่อนไหว
+    const animatedImage = document.createElement('img');
+    animatedImage.src = 'amon.gif'; // ใส่ path ของรูปเคลื่อนไหว
+    animatedImage.style.width = '50%';
+    animatedImage.style.height = 'auto';
+    animatedImage.style.borderRadius = '10px';
+    animatedImage.style.boxShadow = '0 0 30px rgba(255, 255, 255, 0.8)';
+    animatedImage.style.animation = 'fadeInZoom 1s ease-in-out';
+
+    // เพิ่มรูปภาพในเลเยอร์สีดำ
+    darkOverlay.appendChild(animatedImage);
+
+    // เพิ่มเลเยอร์สีดำบนหน้าเว็บ
+    document.body.appendChild(darkOverlay);
+
+    // ลบเลเยอร์หลัง 3 วินาที
+    setTimeout(() => {
+        darkOverlay.remove();
+    }, 3000);
+
+    const warningText = document.createElement('div');
+warningText.innerText = "รหัสไม่ถูกต้อง! กรุณาลองใหม่...";
+warningText.style.color = 'white';
+warningText.style.fontSize = '1.5rem';
+warningText.style.marginTop = '20px';
+warningText.style.textAlign = 'center';
+warningText.style.fontFamily = "'Cinzel Decorative', serif";
+
+darkOverlay.appendChild(warningText);
+
+}
+
+// เพิ่มเอฟเฟ็กต์ซูมและเฟด
+const style = document.createElement('style');
+style.innerHTML = `
+  @keyframes fadeInZoom {
+    from {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+`;
+document.head.appendChild(style);
+
+
+
 
 
       

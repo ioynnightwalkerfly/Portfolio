@@ -112,13 +112,13 @@ body {
 }
 
 .background[data-item="four"] {
-  background: url(bgCC.png);
+  background: url(bg4.png);
   background-size: cover;
   background-position: 50% 60%;
 }
 
 .background[data-item="five"] {
-  background: url(bgCC.png);
+  background: url(bg5.png);
   background-size: cover;
   background-position: 50% 40%;
 }
