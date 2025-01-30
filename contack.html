@@ -170,19 +170,44 @@ function grantAccess() {
         const loader = document.getElementById('loader');
         loader.style.display = "flex";
 
+        // เล่นแอนิเมชันแถบโหลด 3 วินาที
         setTimeout(() => {
-            // ซ่อนแถบโหลดและแสดงจอดำ
+            // ซ่อนแถบโหลด
             loader.style.display = "none";
-            document.body.style.background = "black";
 
-            // แสดงข้อความและรูปภาพ
+            // แสดงข้อความและรูปเคลื่อนไหว
+            document.body.style.background = "black";
             const content = document.getElementById('content');
             content.style.display = "flex";
-        }, 3000); // เวลาโหลด 3 วินาที
+
+            // เพิ่มข้อความแนะนำให้กดที่หน้าจอเพื่อไปต่อ
+            const hintMessage = document.createElement('div');
+            hintMessage.innerText = "👆 ";
+            hintMessage.style.position = "absolute";
+            hintMessage.style.bottom = "20px";
+            hintMessage.style.width = "100%";
+            hintMessage.style.textAlign = "center";
+            hintMessage.style.color = "#ffcccc";
+            hintMessage.style.fontSize = "1.5rem";
+            hintMessage.style.fontFamily = "'Cinzel Decorative', serif";
+         
+            document.body.appendChild(hintMessage);
+
+            // เพิ่ม Event Listener สำหรับการคลิกเพื่อเปลี่ยนหน้า
+            document.body.addEventListener('click', redirectToNextPage);
+        }, 3000); // แสดงผลหลังแถบโหลดเล่นเสร็จ
     } else {
         // หากรหัสผิดแสดงหน้าจอมืดและรูปเคลื่อนไหวแบบเต็มจอ
         showFullScreenAnimation();
     }
+}
+
+function redirectToNextPage() {
+    // ลบ Event Listener เพื่อไม่ให้เกิดปัญหาเมื่อคลิกหลายครั้ง
+    document.body.removeEventListener('click', redirectToNextPage);
+
+    // เปลี่ยนไปยังหน้าถัดไป
+    window.location.href = "index.html";
 }
 
 function showFullScreenAnimation() {

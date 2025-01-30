@@ -5,6 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Portfolio</title>
   <link rel="stylesheet" href="home_style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<style>
+    /* สไตล์สำหรับปุ่มลอย */
+    .floating-chat-head {
+      position: fixed;
+      top: 80%; /* ระยะห่างจากขอบบน */
+      right: 20px; /* ระยะห่างจากขอบขวา */
+      background-color: #4caf50; /* สีพื้นหลัง */
+      color: white; /* สีตัวอักษร */
+      border: none;
+      border-radius: 50%; /* ทำให้เป็นวงกลม */
+      width: 60px; /* ความกว้างของปุ่ม */
+      height: 60px; /* ความสูงของปุ่ม */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.5rem; /* ขนาดไอคอนหรือข้อความ */
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+      z-index: 1000; /* ทำให้ปุ่มอยู่ด้านบน */
+      cursor: pointer;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .floating-chat-head:hover {
+      transform: scale(1.1); /* ขยายขนาดเล็กน้อยเมื่อ hover */
+      background-color: #45a049; /* สีเปลี่ยนเมื่อ hover */
+    }
+  </style>
+
 </head>
 <body>
   <!-- Header -->
@@ -12,7 +45,7 @@
     <div class="logo"><img src="logo.png" alt="Logo"></div>
     <nav>
       <ul class="nav-links">
-        <li><a href="about.html">About</a></li>
+        <li><a href="Resume.html">About</a></li>
         <li><a href="portfolio.html">Portfolio</a></li>
         <li><a href="contack.html">Contact</a></li>
       </ul>
@@ -61,9 +94,25 @@
       <li><a href="https://github.com/ioynnightwalkerfly">Github</a></li>
       <li><a href="https://line.me/ti/p/NDSdKmhbfX">Line</a></li>
       <li><a href="https://www.deviantart.com/jusminnightwalker">Deviantart</a></li>
-      
-      
     </ul>
   </footer>
+
+  
+ 
+
+ 
+
+  <!-- ปุ่มลอย -->
+  <button class="floating-chat-head" onclick="goToNextPage()">
+  <i class="fas fa-music"></i>
+</button>
+
+
+  <script>
+    // ฟังก์ชันสำหรับเปลี่ยนหน้า
+    function goToNextPage() {
+      window.location.href = "music.html"; // เปลี่ยน URL ไปยังหน้าถัดไป
+    }
+  </script>
 </body>
 </html>
