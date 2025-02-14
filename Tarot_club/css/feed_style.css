@@ -1,0 +1,206 @@
+/* ✅ รีเซ็ตค่าเบื้องต้น */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* 🏠 Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1E1E1E;
+    padding: 15px 20px;
+    color: white;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.search-bar {
+    padding: 8px;
+    width: 40%;
+    border-radius: 5px;
+    border: none;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.logout-btn {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+}
+
+/* 📌 Sidebar */
+.sidebar {
+    width: 200px;
+    background: #2C2C2C;
+    color: white;
+    height: 100vh;
+    padding: 20px;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+/* 📢 Feed */
+.container {
+    display: flex;
+}
+
+.feed {
+    margin-left: 220px;
+    padding: 20px;
+    width: 70%;
+}
+
+/* 🔹 กล่องโพสต์ใหม่ */
+.post-box {
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.post-box textarea {
+    width: 100%;
+    height: 80px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+/* 📝 โพสต์ */
+.post {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.post-profile-pic {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.post-user {
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.post-image {
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+.post-actions {
+    margin-top: 10px;
+}
+
+.post-actions button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+/* 🟢 ตั้งค่ากล่องโพสต์ */
+.post {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 600px; /* ✅ กำหนดขนาดสูงสุดของโพสต์ */
+    overflow: hidden;
+}
+
+/* 🟢 จัดวางหัวโพสต์ */
+.post-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.post-profile-pic {
+    width: 40px;  /* ✅ ขนาดโปรไฟล์ */
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover;
+}
+
+.post-user {
+    font-weight: bold;
+}
+
+/* 🟢 จำกัดขนาดรูปภาพในโพสต์ */
+.post-image {
+    width: 100%; /* ✅ ให้รูปขยายเต็มความกว้างของโพสต์ */
+    max-height: 400px; /* ✅ กำหนดความสูงสูงสุด */
+    object-fit: cover; /* ✅ ปรับให้รูปภาพไม่ยืดผิดสัดส่วน */
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+/* 🟢 ปุ่มโพสต์ */
+.post-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.like-btn, .comment-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 5px 10px;
+    transition: 0.3s;
+}
+
+.like-btn:hover, .comment-btn:hover {
+    background: #f1f1f1;
+    border-radius: 5px;
+}
+
+/* ✅ ปรับแต่งเพิ่มเติมตามต้องการ */
